@@ -1,0 +1,77 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          ffserd
+# Required-Start:    $all
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+ FFSER=/usr/local/ffmpeg-3.4.1/bin/ffserver
+
+start() {
+        ps -p $(pgrep ffserve[r]) >/dev/null 2>&1
+        if [ $? == 0 ]; then
+          echo "ffserver already running"
+        else
+ 	{
+		echo -n "Starting ffserver: "
+		$FFSER 2>/dev/null&
+		if [ $? == 0 ]; then
+	  	  echo "ok"
+		else 
+	  	  echo fail
+		fi
+	}
+	fi 
+}
+
+stop() {
+        echo -n "Stoping ffmpeg: "
+        kill $(pgrep ffmpe[g]) >/dev/null 2>&1
+	if [ $? == 0 ]; then
+          echo "ok"
+        else
+          echo fail
+        fi
+	echo -n "Stoping ffserver: "
+	kill $(pgrep ffserve[r]) >/dev/null 2>&1
+	if [ $? == 0 ]; then
+          echo "ok"
+        else
+          echo fail
+        fi
+}
+
+status() {
+        ps -p $(pgrep ffserve[r]) >/dev/null 2>&1
+	if [ $? == 0 ]; then
+          echo "ffserver is running"
+        else
+          echo "ffserver is not running"
+        fi
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: ffserver {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+exit $?

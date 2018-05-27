@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -n "$1" ]; then
+   if  [[ "$1" == "open" ]]; then
+           i2cset -y 0 0x40 0x0A 0 0 2 0 i;
+   else 
+	i2cset -y 0 0x40 0x0A 0 0 0 2 i;
+   fi
+fi
+sleep 0.2;
+i2cset -y 0 0x40 0x0A 0 0 0 0 i;
+exit 0
+ 

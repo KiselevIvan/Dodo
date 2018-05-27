@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -n "$1" ] && (echo "$1" | grep -E -q "^-?[0-9]+$"); then
+         
+	if [ $1 -le 180 ] && [ $1 -ge 0 ]; then
+	   if [ $1 -ge 90 ]; then 
+	        i2cset -y 0 0x40 0x0E 0 0 `map_ard $1 90 180 100 250` 1 i;
+		else if [ $1 -ge 45 ]; then
+			i2cset -y 0 0x40 0x0E 0 0 `map_ard $1 45 90 1 100` 1 i; 
+		     else
+			i2cset -y 0 0x40 0x0E 0 0 `map_ard $1 0 45 150 250` 0 i;	 	     fi 
+           fi
+	  #sleep 0.25; 
+	  #i2cset -y 0 0x40 0x0E 0 0 0 0 i;
+	fi 
+fi
+exit 0
+

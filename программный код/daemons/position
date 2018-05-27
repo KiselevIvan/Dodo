@@ -1,0 +1,75 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          position
+# Required-Start:    $all
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+start() {
+        ps -p $(pgrep positionin[g]) >/dev/null 2>&1
+        if [ $? == 0 ]; then
+          echo "position already running"
+        else
+ 	{
+		echo -n "Starting position monitor: "
+		positioning 2>/dev/null&
+		if [ $? == 0 ]; then
+	  	  echo "ok"
+		else 
+	  	  echo fail
+		fi
+	}
+	fi 
+}
+
+stop() {
+        ps -p $(pgrep positionin[g]) >/dev/null 2>&1
+	if [ $? != 0 ]; then
+          echo "position monitor alredy is stoped"
+        else
+        {
+		echo -n "Stoping position monitor: "
+	        kill $(pgrep positionin[g]) >/dev/null 2>&1
+		if [ $? == 0 ]; then
+	          echo "ok"
+        	else
+	          echo fail
+        	fi
+	}
+	fi
+}
+
+status() {
+        ps -p $(pgrep positionin[g]) >/dev/null 2>&1
+	if [ $? == 0 ]; then
+          echo "position monitor is running"
+        else
+          echo "position monitor is not running"
+        fi
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: position {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+exit $?

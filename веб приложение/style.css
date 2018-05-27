@@ -1,0 +1,233 @@
+body{
+	 background-color:grey;
+	}
+
+div.main{ 
+		 width:1000px;
+		 height:633px;
+	     margin:auto;
+		}
+div#video {float:left;
+		  }
+		
+#rightBlock{
+			 width:360px;
+			 height:480px;
+			 background-color:#b1b1b1;
+			 float:right;
+			 position: relative;
+			}
+		 
+div#bottomBlock{
+		    background-color: #b1b1b1;
+		    float:left;
+			width:1000px;
+			height:250px;
+		   }
+		   
+div.ControlButton{
+					width:210px;
+					height:250px;					
+					float:left;					
+					position: relative;
+					left:0px;
+				 }
+				 
+div.Control p {
+					  text-align:center;
+					  color:white
+					}
+.Control {
+	background-color: #707070;
+}
+
+#systemInfo{
+				height:126px;
+				width:100%;
+			}
+#value{
+					height:100px;
+					overflow:auto;
+					background-color:white;
+					}
+
+#position{
+				height:162px;
+				width:100%;
+				background-color:white;
+			}
+
+div.positionCoor{
+				position:relative;
+				height:160px;
+				width:180px;
+				float:left;
+				outline: 2px solid #000;
+			}
+
+.positionCoorPic{
+				position:absolute;
+				top:0%;
+				left:0%;
+			}
+.positionBotPic{
+				position:absolute;				
+				}	
+#tangageBotPic{
+				top:18%;
+				left:10%;
+			  }
+#careneBotPic{
+				top:25%;
+				left:10%;
+			  }
+					
+#MainButton{										
+					height:180px;
+					width:30%;
+					float:left;
+					position:relative;
+					background-color: #464646;
+				}				 
+				 
+div#ClawControl{
+					width:70%;
+					height:180px;					
+					position: relative;
+					float:left;
+			   }
+		   
+.ClawButton{
+				position:absolute;
+				top:70px;
+				left:180px;
+			}	
+.clawThumbs
+	{
+		position:absolute;
+		top:80px;
+		left:30px;
+	}
+
+		   
+#Manipulator
+	{
+		position: relative;
+		width:325px;
+	    height:250px;					
+		float:left;		
+	}
+	
+#thumbianCam
+	{
+		position: relative;
+		float:left;
+		width:250px;
+		height:250px;
+	}
+	
+#roboBodyRight
+	{
+		position: absolute;
+		top: 130px;
+		left:40px;
+	}
+	
+#roboArm
+	{
+		position: absolute;
+		top: 75px;
+		left: 150px;
+	}
+	
+#roboBodyTop
+	{
+		position: absolute;
+		top: 90px;
+		left: 50px;
+	}	
+	
+#roboCamTop
+	{
+		position: absolute;
+		top: 10px;
+		left: 30px;
+	}	
+	
+#ClawUpDown{
+			background-color: #707070;
+			position:absolute;
+			top:230px;
+			left:10px;
+			width:300px;
+			transform: rotate(180deg);
+			
+		   }	
+	
+#ClawRotate{
+			position:absolute;
+			left:10px;
+			top:150px;
+			width:90%;
+		   }
+
+		   
+.button{
+		width:45px;
+		height:45px;
+		background-image: radial-gradient( #f3f3f3 25%,#b4b4b4 80%, #707070);
+		/*(#f5f5f5, #dedede);
+		/*background:linear-gradient(to bottom, #F6EFD2, #CEAD78);
+		*/
+		margin:auto;
+		border-radius: 90px;
+		border: 2px solid #000;
+		box-shadow: 0px 0px 0px 2px #0b29ab;
+		transition: box-shadow 300ms ease-in-out;
+		position:absolute;
+	   }
+
+	   
+	   
+#power{
+	background-image: radial-gradient( #e65353 25%,#cd0a00 80%, #b80000);
+	position:absolute;
+	left:30px;
+	top:110px;
+	  }
+#power:hover{
+			  box-shadow: 0px 0px 10px 5px #ff0000;
+			}
+#restartService{
+				position:absolute;
+				left:30px;
+				top:30px;
+			   }
+.button:hover{
+			   box-shadow: 0px 0px 10px 5px #1e13f5;
+			   transition: box-shadow 300ms ease-in-out;
+			 }	
+#b1, #b5{		 
+		 left: 80px;
+		 top: 65px;
+		}			 
+			 	
+#b2,#b6{				
+		left: 140px;
+		top:  125px;
+	   }
+
+#b3,#b7{		
+		left: 80px;
+	    top:  185px;
+	   }	
+
+#b4,#b8{
+		left: 20px;
+		top:125px;
+	   }
+
+#camCentr{		 
+		 left: 80px;
+		 top:  125px;
+		}	   

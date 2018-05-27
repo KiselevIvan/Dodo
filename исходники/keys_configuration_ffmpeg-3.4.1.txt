@@ -1,0 +1,37 @@
+libx264, libvpx, libvorbis, libtheora, libmp3lame è libfaac
+
+./configure 
+--prefix=/usr/local/ffmpeg-3.4.1
+
+--enable-nonfree  
+--disable-ffplay
+--disable-ffprobe
+--enable-avresample 
+--enable-libfdk-aac
+--enable-libmp3lame
+--enable-libopenh264
+--enable-libopus
+--enable-librtmp 
+--enable-libtheora
+--enable-libv4l2
+--enable-libvorbis
+--enable-libvpx
+--enable-libx264
+--enable-libx265
+--enable-libxvid 
+
+--enable-gpl
+--enable-libass
+--enable-libfreetype
+
+--enable-shared
+--enable-pic
+
+--pkg-config-flags="--static"
+--extra-cflags="-I/usr/local/ffmpeg-3.4.1/include"
+--extra-ldflags="-L/usr/local/ffmpeg-3.4.1/lib"
+--extra-libs="-lpthread -lm"
+
+
+
+./configure --prefix=/usr/local/ffmpeg-3.4.1 --enable-nonfree --disable-ffplay --disable-ffprobe --enable-avresample --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-librtmp --enable-libtheora --enable-libv4l2 --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libxvid --enable-gpl --enable-libass --enable-libfreetype --enable-shared --enable-pic
